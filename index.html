@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<title>PoC Envelo</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div>
+<div class="header">
+    <h4>ENVELO</h4>
+    <p>Mozesz mieć swoją przesyłkę w kilkanaście sekund.</p>
+    <p>Rozpocznij klikając w przycisk.</p>
+</div>
+
+<div id="main">
+    <div id="err"></div>
+    <form id="form" action="/">
+        <label for="number_phone">Nr Telefonu</label>
+     <input id="number_phone" placeholder="Nr Telefonu" />
+     <input id="package_code" placeholder="Kod" />
+     <button disabled id="submit" type="submit">Odbierka</button>
+    </form>
+</div>
+
+
+<div class="btn">
+    <button onclick="showContent()" id="btn">Odbierz paczkę</button>
+</div>
+</div>
+
+<script src="js/script.js"></script>
+<script src="js/validation.js"></script> 
+</body>
+</html>
