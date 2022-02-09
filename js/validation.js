@@ -2,7 +2,8 @@ const numberPhone = document.getElementById("number_phone");
 const packageCode = document.getElementById("package_code");
 const form = document.getElementById("form");
 const error = document.getElementById("err");
-const button = document.getElementById("submit");
+const button = document.getElementById("btn-submit");
+const popUp = document.getElementById("popup_window");
 
 function validatePhoneNumber(input_str) {
     var regexNuberPhone = /^[0-9]{9}$/;
@@ -16,26 +17,36 @@ function validatePackageCode(input_str) {
     return regexPackageCode.test(input_str);
 }
 
-form.addEventListener('keyup', (e) => {
-    e.preventDefault();
+function validateData(e) {
+    let messages = [];
 
     if((validatePhoneNumber(numberPhone.value) && validatePackageCode(packageCode.value))) {
         button.disabled = false;
+        messages.push("dobrze")
     } else {
         button.disabled = true;
+        messages.push("zle")
     }
-})
 
-button.addEventListener('click', (e) => {
-    let messages = [];
-    if((validatePhoneNumber(numberPhone.value) && validatePackageCode(packageCode.value))) {
-        messages.push("git")
-    } else {
-        messages.push("bad")
-    }
+    console.log(numberPhone.value)
+    console.log(packageCode.value)
 
     if(messages.length > 0) {
         e.preventDefault();
         error.innerText = messages.join(', ')
     }
+}
+
+form.addEventListener('keyup', (e) => {
+   validateData(e);
 })
+
+function togglePopUp() {
+    if (popUp.style.display === "none") {
+        popUp.style.display = "block";
+      } else {
+        popUp.style.display = "none";
+      }
+} 
+
+

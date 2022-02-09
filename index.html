@@ -1,35 +1,46 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-<title>PoC Envelo</title>
-<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+  <head>
+    <title>PoC Envelo</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/popup.css" />
+  </head>
+  <body>
+    <div class="main-contener">
+      <div class="header">
+        <h4>ENVELO</h4>
+        <p>Mozesz mieć swoją przesyłkę w kilkanaście sekund.</p>
+        <p>Rozpocznij klikając w przycisk.</p>
+      </div>
 
-<div>
-<div class="header">
-    <h4>ENVELO</h4>
-    <p>Mozesz mieć swoją przesyłkę w kilkanaście sekund.</p>
-    <p>Rozpocznij klikając w przycisk.</p>
-</div>
+      <div id="main">
+        <div id="err"></div>
+        <form id="form" action="/" method="GET">
+          <label for="number_phone">Nr Telefonu</label>
+          <input id="number_phone" placeholder="Nr Telefonu" />
+          <input id="package_code" placeholder="Kod" />
+        </form>
+        <button id="btn-submit" type="button" onclick="togglePopUp()">Odbierka</button>
+      </div>
 
-<div id="main">
-    <div id="err"></div>
-    <form id="form" action="/">
-        <label for="number_phone">Nr Telefonu</label>
-     <input id="number_phone" placeholder="Nr Telefonu" />
-     <input id="package_code" placeholder="Kod" />
-     <button disabled id="submit" type="submit">Odbierka</button>
-    </form>
-</div>
+      <div class="popup" id="popup_window">
+          <div class="overlay"></div>
+          <div class="content">
+              <h4>Paczka odebrana!</h4>
+              <p>Zrobiłeś to w czasie {x} sekund! Czy
+                  mozemy coś zrobić dla Ciebie jeszcze?
+              </p>
+              <button onclick="showFirstScreen()">To wszystko na dziś</button>
+              <button onclick="togglePopUp()">Odbirz kolejną paczkę</button>
+          </div>
+      </div>
 
+      <div class="btn">
+        <button onclick="showContent()" id="btn">Odbierz paczkę</button>
+      </div>
+    </div>
 
-<div class="btn">
-    <button onclick="showContent()" id="btn">Odbierz paczkę</button>
-</div>
-</div>
-
-<script src="js/script.js"></script>
-<script src="js/validation.js"></script> 
-</body>
+    <script src="js/script.js"></script>
+    <script src="js/validation.js"></script>
+  </body>
 </html>
