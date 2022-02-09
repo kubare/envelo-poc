@@ -22,10 +22,12 @@ function validateData(e) {
 
     if((validatePhoneNumber(numberPhone.value) && validatePackageCode(packageCode.value))) {
         button.disabled = false;
-        messages.push("dobrze")
+        button.style.background="rgba(238, 45, 36, 255)"
+        messages.push("")
     } else {
         button.disabled = true;
-        messages.push("zle")
+        button.style.background="grey"
+        messages.push("Numer telefonu musi posiadać 9 cyfr, kod odbioru 4 cyfry.")
     }
 
     console.log(numberPhone.value)
@@ -34,6 +36,8 @@ function validateData(e) {
     if(messages.length > 0) {
         e.preventDefault();
         error.innerText = messages.join(', ')
+        error.style.fontSize = "12px"
+        error.style.textAlign = "center"
     }
 }
 
