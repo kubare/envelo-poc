@@ -6,13 +6,13 @@ const button = document.getElementById("btn-submit");
 const popUp = document.getElementById("popup_window");
 
 function validatePhoneNumber(input_str) {
-    var regexNuberPhone = /^[0-9]{9}$/;
+    const regexNuberPhone = /^[0-9]{9}$/;
 
     return regexNuberPhone.test(input_str);
 }
 
 function validatePackageCode(input_str) {
-    var regexPackageCode = /^[0-9]{4}$/;
+    const regexPackageCode = /^[0-9]{4}$/;
 
     return regexPackageCode.test(input_str);
 }

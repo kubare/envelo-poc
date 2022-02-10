@@ -1,9 +1,9 @@
-var tens = 0;
-var OutputTens = document.getElementById("tens");
-var buttonStart = document.getElementById("btn");
-var buttonStop = document.getElementById("btn-submit");
-var buttonReset = document.getElementById("btn-reset");
-var Interval;
+let tens = 0;
+let OutputTens = document.getElementById("tens");
+let buttonStart = document.getElementById("btn");
+let buttonStop = document.getElementById("btn-submit");
+let buttonReset = document.getElementById("btn-reset");
+let Interval;
 
 buttonStart.addEventListener("click", () => {
   clearInterval(Interval);
