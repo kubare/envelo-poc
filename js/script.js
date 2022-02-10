@@ -11,3 +11,7 @@ const showContent = () => {
 const showFirstScreen = () => {
     window.location.reload();
 }
+
+const showSecondScreen = () => {
+    popUp.style.display = "none";
+}

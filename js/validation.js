@@ -17,7 +17,7 @@ function validatePackageCode(input_str) {
     return regexPackageCode.test(input_str);
 }
 
-function validateData(e) {
+function validateData() {
     let messages = [];
 
     if((validatePhoneNumber(numberPhone.value) && validatePackageCode(packageCode.value))) {
@@ -30,11 +30,7 @@ function validateData(e) {
         messages.push("Numer telefonu musi posiadać 9 cyfr, kod odbioru 4 cyfry.")
     }
 
-    console.log(numberPhone.value)
-    console.log(packageCode.value)
-
     if(messages.length > 0) {
-        e.preventDefault();
         error.innerText = messages.join(', ')
         error.style.fontSize = "12px"
         error.style.textAlign = "center"
@@ -42,15 +38,13 @@ function validateData(e) {
 }
 
 form.addEventListener('keyup', (e) => {
-   validateData(e);
+   validateData();
+   e.preventDefault();
 })
 
 function togglePopUp() {
-    if (popUp.style.display === "none") {
-        popUp.style.display = "block";
-      } else {
-        popUp.style.display = "none";
-      }
-} 
+    popUp.style.display = "block";
+}
+
 
 
